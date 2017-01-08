@@ -135,7 +135,7 @@ class APC40_Mod(APC, OptimizedControlSurface):
         self._transport = TransportComponent(name='Transport', is_enabled=False, layer=Layer(shift_button=self._shift_button, play_button=self._play_button, stop_button=self._stop_button, record_button=self._record_button, metronome_button=self._metronome_button, tap_tempo_button=self._tap_tempo_button, nudge_down_button=self._nudge_down_button, nudge_up_button=self._nudge_up_button, quant_toggle_button=self._rec_quantization_button, overdub_button=self._overdub_button), play_toggle_model_transform=lambda v: v)
 
     def _create_device(self):
-        self._device = DeviceComponent(name='Device', is_enabled=False, layer=Layer(parameter_controls=self._device_controls, bank_buttons=self._device_bank_buttons, on_off_button=self._device_on_off_button))
+        self._device = DeviceComponent(name='Device', is_enabled=False, layer=Layer(parameter_controls=self._device_controls, bank_buttons=self._device_bank_buttons, on_off_button=self._device_on_off_button), device_selection_follows_track_selection=True)
 
     def _create_view_control(self):
         self._view_control = DetailViewCntrlComponent(name='View_Control', is_enabled=False, layer=Layer(device_nav_left_button=self._detail_left_button, device_nav_right_button=self._detail_right_button, device_clip_toggle_button=self._device_clip_toggle_button, detail_toggle_button=self._detail_toggle_button))
